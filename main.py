@@ -40,7 +40,7 @@ while game_over == False:
         if(segment == snake.segments[0]):
             pass
         elif(snake.segments[0].distance(segment) < 5):
-            game_over = True
-            scoreboard.gameover()
+            scoreboard.reset()
+            snake.reset()
 
 screen.exitonclick()

@@ -1,4 +1,4 @@
-from turtle import Turtle,Screen
+from turtle import Turtle,Screen, setheading
 STARTING_POSITIONS = [(0,0), (-10, 0), (-20, 0)]
 MOVE_DISTANCE = 10
 
@@ -48,3 +48,9 @@ class Snake:
         new_segment.color("white")
         new_segment.goto(self.segments[len(self.segments) - 1].xcor(),self.segments[len(self.segments) - 1].ycor() )
         self.segments.append(new_segment)
+    
+    def reset(self):
+        for segment in self.segments:
+            segment.goto(1000,1000)
+        self.segments.clear()
+        self.createSnake()
